@@ -4,7 +4,7 @@ from google.cloud.vision import types
 from google.cloud import vision
 import pprint
 
-def detect_soil(path):
+def detect(path):
     """Detects labels in the file."""
     client = vision.ImageAnnotatorClient()
 
@@ -20,5 +20,6 @@ def detect_soil(path):
     flag=0	
     for label in labels:
 	print(label.description)
+	
 filename = raw_input("Enter filename:")
-detect_soil(filename)
+detect(filename)
